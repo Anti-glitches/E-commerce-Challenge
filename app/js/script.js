@@ -18,6 +18,16 @@ window.addEventListener("mouseup", function (event) {
 	if (!checkout.contains(event.target)) {
 		checkout.style.display = "none";
 	}
+
+	if (!mobileMenu.contains(event.target) && !menuLogo.contains(event.target)) {
+		menuLogo.attributes["src"].value = "images/icon-menu.svg";
+		mobileMenu.classList.remove("open");
+		document.querySelector("body").style.overflow = "visible";
+
+		setTimeout(() => {
+			mobileMenu.firstElementChild.style.display = "none";
+		}, 300);
+	}
 });
 
 menuLogo.addEventListener("click", () => {
