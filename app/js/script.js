@@ -15,7 +15,10 @@ const imageThumbnail = document.querySelectorAll(
 );
 
 window.addEventListener("mouseup", function (event) {
-	if (!checkout.contains(event.target)) {
+	if (
+		!checkout.contains(event.target) &&
+		!checkoutIcon.contains(event.target)
+	) {
 		checkout.style.display = "none";
 	}
 
