@@ -1,0 +1,238 @@
+.header {
+	display: flex;
+	justify-content: stretch;
+	align-items: center;
+	height: 12.5vh;
+	border-bottom: 1px solid $lightGrayishBlue;
+
+	&__toggle {
+		display: none;
+	}
+
+	&__logo {
+		margin-right: 3rem;
+	}
+
+	&__menu {
+		width: 25rem;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		a {
+			text-decoration: none;
+			color: $darkGrayishBlue;
+			padding-bottom: 4.2vh;
+
+			&:hover {
+				color: $veryVarkBlue;
+				border-bottom: 0.5vh solid $orange;
+			}
+		}
+	}
+
+	&__cart {
+		margin-left: auto;
+		margin-right: 3vw;
+		position: relative;
+
+		img {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		& .badge {
+			position: absolute;
+			background-color: $orange;
+			color: $white;
+			font-size: 0.65rem;
+			padding-left: 6px;
+			padding-right: 6px;
+			border-radius: 6px;
+			left: 10px;
+			top: -4px;
+		}
+
+		& .checkout {
+			display: none; //swicth between grid and none
+			grid-template-rows: auto 2fr;
+			row-gap: 20px;
+			width: 360px;
+			min-height: 250px;
+			position: absolute;
+			top: 160%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 0.5rem;
+			padding: 25px 25px 30px 25px;
+			background-color: $white;
+			box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.1);
+			z-index: 2;
+
+			& .hidden {
+				//helper class
+				display: none;
+			}
+
+			&__header {
+				font-weight: 700;
+				border-bottom: solid 2px $lightGrayishBlue;
+				height: 45px;
+			}
+
+			&__empty {
+				font-weight: 700;
+				color: $darkGrayishBlue;
+				text-align: center;
+				align-self: center;
+			}
+
+			&__item {
+				display: grid;
+				grid-template-columns: 2fr 10fr 1fr;
+				gap: 10px;
+
+				// background-color: lightcoral;
+				align-items: center;
+
+				& .productImage {
+					width: 50px;
+					height: auto;
+					border-radius: 0.3rem;
+				}
+
+				& .productInfo {
+					& p {
+						margin: 10px 0;
+						font-size: 13px;
+
+						& .productTotalPrice {
+							color: $veryVarkBlue;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+
+			&__button {
+				background-color: $orange;
+				color: white;
+				font-weight: 700;
+				font-size: 0.82rem;
+				border: none;
+				border-radius: 0.5rem;
+				height: 45px;
+
+				&:hover {
+					opacity: 0.9;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	&__profile {
+		img {
+			width: 3.125rem;
+			height: auto;
+			border-radius: 50%;
+			border: 2px solid $white;
+
+			&:hover {
+				border-radius: 50%;
+				border-color: $orange;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+@media (max-width: 960px) {
+	.header {
+		&__toggle {
+			display: block;
+			padding-right: 20px;
+
+			& img {
+				position: relative;
+				z-index: 30;
+				width: 16px;
+				// padding-right: 20px;
+				cursor: pointer;
+			}
+
+			& .mobileMenu {
+				position: fixed;
+				left: 0;
+				top: 0;
+				height: 100vh;
+				width: 0;
+				background-color: rgba(255, 255, 255, 0.95);
+				z-index: 10;
+				transition: width ease-in 400ms;
+			}
+
+			& .mobileMenu ul {
+				margin-top: 100px;
+				height: 100%;
+				list-style: none;
+				display: none;
+
+				& li {
+					padding-bottom: 25px;
+					font-weight: 700;
+					font-size: 1.3rem;
+
+					a {
+						text-decoration: none;
+						color: $veryVarkBlue;
+						// padding-bottom: 10px;
+
+						&:hover {
+							border-bottom: 4px solid $orange;
+						}
+					}
+				}
+			}
+
+			& .mobileMenu.open {
+				width: 360px;
+				padding-left: 11.6vw;
+			}
+		}
+
+		&__menu {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.header {
+		&__cart {
+			& .checkout {
+				left: 50%;
+
+				transform: translateX(-75%);
+
+				//I need to center it to the position of the body
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.header {
+		&__toggle {
+			& .mobileMenu.open {
+				width: 300px;
+				padding-left: 7vw;
+			}
+		}
+	}
+}
