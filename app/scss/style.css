@@ -82,7 +82,11 @@ button:hover {
   position: relative;
 }
 
-.header__cart img:hover {
+.header__cart img:nth-child(1) {
+  width: 25px;
+}
+
+.header__cart img:nth-child(1):hover {
   cursor: pointer;
 }
 
@@ -90,11 +94,11 @@ button:hover {
   position: absolute;
   background-color: #ff7d1a;
   color: white;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   padding-left: 6px;
   padding-right: 6px;
   border-radius: 6px;
-  left: 10px;
+  left: 13px;
   top: -4px;
 }
 
@@ -573,15 +577,15 @@ button:hover {
     padding-top: 4vh;
   }
   .product__image button {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     top: 38%;
   }
   .product__image .prevImg {
-    left: -5%;
+    left: -7%;
   }
   .product__image .nextImg {
-    right: -5%;
+    right: -7%;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,13 +14,11 @@ const imageThumbnail = document.querySelectorAll(
 	".product__image__thumbnail img"
 );
 
-// window.addEventListener("mouseup", function (event) {
-// 	if (event.target != checkout && event.target.parentNode != checkout) {
-// 		checkout.style.display = "none";
-// 	} else {
-// 		checkout.style.display = "none";
-// 	}
-// });
+window.addEventListener("mouseup", function (event) {
+	if (!checkout.contains(event.target)) {
+		checkout.style.display = "none";
+	}
+});
 
 menuLogo.addEventListener("click", () => {
 	if (menuLogo.attributes["src"].value == "images/icon-close.svg") {

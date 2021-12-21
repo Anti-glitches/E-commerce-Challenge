@@ -40,7 +40,9 @@
 		margin-right: 3vw;
 		position: relative;
 
-		img {
+		& img:nth-child(1) {
+			width: 25px;
+
 			&:hover {
 				cursor: pointer;
 			}
@@ -50,11 +52,11 @@
 			position: absolute;
 			background-color: $orange;
 			color: $white;
-			font-size: 0.65rem;
+			font-size: 0.7rem;
 			padding-left: 6px;
 			padding-right: 6px;
 			border-radius: 6px;
-			left: 10px;
+			left: 13px;
 			top: -4px;
 		}
 
